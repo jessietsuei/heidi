@@ -6,6 +6,7 @@ import CardContainer from '../assets/card-container.svg';
 import Sparkle from '../assets/sparkle.svg';
 import TaskRow from '../assets/task-row.svg';
 import TaskRowCompleted from '../assets/task-row-completed.svg';
+import TaskRowAnimated from './TaskRowAnimated';
 
 const TaskCard = () => {
   const [phase, setPhase] = useState(0);
@@ -103,7 +104,7 @@ const TaskCard = () => {
     }
   };
 
-  const rowPositions = ['18%', '40%', '62%'];
+  const rowPositions = ['20%', '42%', '64%'];
   const rows = getRowConfig();
 
   // Track which rows have been shown (for intro animation)
@@ -136,19 +137,19 @@ const TaskCard = () => {
         alt="" 
         style={{ 
           position: 'absolute', 
-          top: '20%', 
-          left: '8%', 
-          width: '84%'
+          top: '22%', 
+          left: '12%', 
+          width: '76%'
         }} 
       />
       
       {/* Rows container - clipped to card area */}
       <div style={{
         position: 'absolute',
-        top: '20%',
-        left: '8%',
-        width: '84%',
-        height: '50%',
+        top: '22%',
+        left: '12%',
+        width: '76%',
+        height: '45%',
         overflow: 'hidden',
         borderRadius: '16px',
       }}>
@@ -172,28 +173,25 @@ const TaskCard = () => {
               justifyContent: 'center',
             }}
           >
-            <div style={{ width: '90%' }}>
-              {row.isCompleted ? (
-                <motion.img 
-                  src={TaskRowCompleted} 
-                  alt=""
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 15,
-                    duration: 0.3
-                  }}
-                  style={{ width: '100%' }}
-                />
-              ) : (
-                <img 
-                  src={TaskRow} 
-                  alt=""
-                  style={{ width: '100%' }}
-                />
-              )}
+            <div style={{ width: '85%' }}>
+
+            {row.isCompleted ? (
+  <motion.img 
+    src={TaskRowCompleted} 
+    alt=""
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ 
+      type: "spring",
+      stiffness: 400,
+      damping: 15,
+      duration: 0.3
+    }}
+    style={{ width: '100%' }}
+  />
+) : (
+  <TaskRowAnimated id={row.id} />
+)}
             </div>
           </motion.div>
         ))}

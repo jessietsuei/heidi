@@ -1,17 +1,20 @@
 import { motion } from 'framer-motion';
 
-const TaskRowAnimated = ({ isCompleted = false, style }) => {
+const TaskRowAnimated = ({ style, id = 1 }) => {
+  const gradientId = `shimmerGradient-${id}`;
+  const shadowId = `shadow-${id}`;
+  
   return (
     <motion.svg 
-      width="90%" 
+      width="100%" 
       height="auto" 
       viewBox="0 0 377 60" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
-      style={style}
+      style={{ display: 'block', ...style }}
     >
       <defs>
-        <filter id="shadow" x="0" y="0" width="377" height="60" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <filter id={shadowId} x="0" y="0" width="377" height="60" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
           <feOffset dy="4"/>
@@ -22,43 +25,55 @@ const TaskRowAnimated = ({ isCompleted = false, style }) => {
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
         </filter>
         
-        {/* Animated gradient */}
+        {/* Animated gradient - sweeps left to right */}
         <motion.linearGradient 
-          id="shimmerGradient"
+  id={gradientId}
+  gradientUnits="userSpaceOnUse"
+  animate={{
+    x1: [-100, 400],
+    x2: [100, 800],
+  }}
+  transition={{
+    duration: 1.8,
+    repeat: Infinity,
+    ease: "easeInOut",
+    delay: id * 0.2,        // Row 1: 0.3s, Row 2: 0.6s, Row 3: 0.9s
+  }}
+>
+  <stop offset="0" stopColor="#280310" stopOpacity="0.4"/>
+  <stop offset="0.5" stopColor="#280310" stopOpacity="1"/>
+  <stop offset="1" stopColor="#280310" stopOpacity="0.4"/>
+</motion.linearGradient>
+
+        {/* Static base gradient for the lines */}
+        <linearGradient 
+          id={`baseGradient-${id}`}
+          x1="44"
+          y1="0"
+          x2="357"
+          y2="0"
           gradientUnits="userSpaceOnUse"
-          animate={{
-            x1: [44, 200, 44],
-            x2: [200, 357, 200],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
         >
-          <stop stopColor="#280310" stopOpacity="0.3"/>
-          <stop offset="0.5" stopColor="#280310" stopOpacity="0.8"/>
-          <stop offset="1" stopColor="#280310" stopOpacity="0.3"/>
-        </motion.linearGradient>
+          <stop offset="0" stopColor="#280310" stopOpacity="0.4"/>
+          <stop offset="0.6" stopColor="#280310" stopOpacity="0.15"/>
+          <stop offset="1" stopColor="#280310" stopOpacity="0"/>
+        </linearGradient>
       </defs>
       
-      <g filter="url(#shadow)">
+      <g filter={`url(#${shadowId})`}>
         {/* Card background */}
         <path d="M8 16C8 9.37258 13.3726 4 20 4H357C363.627 4 369 9.37258 369 16V36C369 42.6274 363.627 48 357 48H20C13.3726 48 8 42.6274 8 36V16Z" fill="white"/>
         
-        {/* Checkbox - empty circle or checkmark */}
-        {isCompleted ? (
-          <g>
-            <circle cx="28" cy="26" r="8" fill="#22C55E"/>
-            <path d="M24 26L27 29L32 23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </g>
-        ) : (
-          <circle cx="28" cy="26" r="7.5" stroke="#280310" fill="none"/>
-        )}
+        {/* Checkbox - empty circle */}
+        <circle cx="28" cy="26" r="7.5" stroke="#280310" fill="none"/>
         
-        {/* Lines with shimmer */}
-        <rect x="44" y="16" width="313" height="8" rx="4" fill="url(#shimmerGradient)"/>
-        <rect x="44" y="28" width="200" height="8" rx="4" fill="url(#shimmerGradient)"/>
+        {/* Line 1 - base gradient + shimmer overlay */}
+        <rect x="44" y="16" width="313" height="8" rx="4" fill={`url(#baseGradient-${id})`}/>
+        <rect x="44" y="16" width="313" height="8" rx="4" fill={`url(#${gradientId})`}/>
+        
+        {/* Line 2 - base gradient + shimmer overlay */}
+        <rect x="44" y="28" width="313" height="8" rx="4" fill={`url(#baseGradient-${id})`}/>
+        <rect x="44" y="28" width="313" height="8" rx="4" fill={`url(#${gradientId})`}/>
       </g>
     </motion.svg>
   );
