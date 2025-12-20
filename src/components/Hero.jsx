@@ -14,8 +14,8 @@ const Hero = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-[56px] leading-[1em] tracking-[-0.05em] text-heidi-text font-normal">
-              Tasks that put care first
+            <h1 className="font-exposure text-[56px] leading-[1em] tracking-[-0.05em] text-heidi-text font-normal">
+            Tasks that put care first
             </h1>
 
             {/* Description */}

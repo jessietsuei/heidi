@@ -1,6 +1,28 @@
 @import "tailwindcss";
 
+/* Self-hosted Exposure font */
+@font-face {
+  font-family: 'Exposure';
+  src: url('/fonts/ExposureTrial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
 @theme {
+  --font-family-exposure: 'Playfair Display', serif;
+}
+
+@theme {
+  /* Fonts */
+  --font-family-exposure: 'Playfair Display', serif;
+  --font-family-inter: 'Inter', sans-serif;
+  --font-family-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+
   --color-bark-900: #280310;
   --color-forest: #194B22;
   --color-forest-700: #2B6433;
@@ -12,7 +34,8 @@
   --color-sunlight: #FBF583;
   --color-heidi-text: #280310;
   --color-heidi-accent: #194B22;
-  --color-heidi-surface: #F7ECE3;
+  --color-heidi-surface: #F9F4F2;
+  --color-heidi-sunlight: #FBF583;
   --color-heidi-background: #F9F4F2;  /* ← Add this */
 }
 
