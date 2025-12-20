@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <section className="w-full px-12 py-12">
-      <div className="bg-heidi-background rounded-3xl px-16 py-12">
+      <div className="bg-heidi-background rounded-3xl px-16 py-2">
         <div className="grid grid-cols-2 gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="flex flex-col gap-4">

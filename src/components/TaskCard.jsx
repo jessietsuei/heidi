@@ -9,7 +9,17 @@ import TaskRowCompleted from '../assets/task-row-completed.svg';
 import TaskRowAnimated from './TaskRowAnimated';
 
 const TaskCard = () => {
-  const [phase, setPhase] = useState(0);
+    const [phase, setPhase] = useState(0);
+    const [hasStarted, setHasStarted] = useState(false);
+  
+    // Delay start of animation
+    useEffect(() => {
+      const startDelay = setTimeout(() => {
+        setHasStarted(true);
+      }, 400);
+      
+      return () => clearTimeout(startDelay);
+    }, []);
 
   const phaseTiming = [
     250,   // 0 → 1: Row 1 appears
@@ -25,15 +35,26 @@ const TaskCard = () => {
     800,   // 10 → 0: Pause, then loop
   ];
 
-  useEffect(() => {
+ // Phase progression
+ useEffect(() => {
+    if (!hasStarted) return;
+    
     const timer = setTimeout(() => {
       setPhase(prev => (prev + 1) % 11);
     }, phaseTiming[phase]);
     return () => clearTimeout(timer);
-  }, [phase]);
+  }, [phase, hasStarted]);
 
   const getRowConfig = () => {
     switch (phase) {
+      case -1:
+        // Not started - all hidden
+        return [
+          { id: 1, position: 0, isCompleted: false, fadeOut: false, visible: false },
+          { id: 2, position: 1, isCompleted: false, fadeOut: false, visible: false },
+          { id: 3, position: 2, isCompleted: false, fadeOut: false, visible: false },
+        ];
+
       case 0:
         return [
           { id: 1, position: 0, isCompleted: false, fadeOut: false, visible: true },
@@ -154,25 +175,26 @@ const TaskCard = () => {
         borderRadius: '16px',
       }}>
         {rows.map((row, index) => (
-          <motion.div
-            key={row.id}
-            animate={{ 
-              top: rowPositions[row.position],
-              opacity: row.visible ? (row.fadeOut ? 0 : 1) : 0,
-              x: getSlideOffset(row, index),
-            }}
-            transition={{ 
-              duration: 0.5, 
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-            style={{ 
-              position: 'absolute', 
-              left: 0,
-              right: 0,
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
+  <motion.div
+    key={row.id}
+    initial={{ opacity: 0, x: 100 + (index * 20) }}  // ← Add initial state
+    animate={{ 
+      top: rowPositions[row.position],
+      opacity: hasStarted && row.visible ? (row.fadeOut ? 0 : 1) : 0,  // ← Check hasStarted
+      x: hasStarted && row.visible ? 0 : 100 + (index * 20),  // ← Check hasStarted
+    }}
+    transition={{ 
+      duration: 0.5, 
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }}
+    style={{ 
+      position: 'absolute', 
+      left: 0,
+      right: 0,
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+  >
             <div style={{ width: '85%' }}>
 
             {row.isCompleted ? (
