@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bark-900: #280310;
+  --color-forest: #194B22;
+  --color-forest-700: #2B6433;
+  --color-sand-100: #F7ECE3;
+  --color-sand-75: #F3EFEA;
+  --color-sand-50: #F9F4F2;
+  --color-sand-25: #FCFAF8;
+  --color-white-100: #FFFFFF;
+  --color-sunlight: #FBF583;
+  --color-heidi-text: #280310;
+  --color-heidi-accent: #194B22;
+  --color-heidi-surface: #F7ECE3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
