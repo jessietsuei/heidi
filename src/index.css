@@ -13,10 +13,12 @@
   --color-heidi-text: #280310;
   --color-heidi-accent: #194B22;
   --color-heidi-surface: #F7ECE3;
+  --color-heidi-background: #F9F4F2;  /* ← Add this */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--color-sand-25);
 }

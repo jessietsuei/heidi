@@ -4,10 +4,10 @@ import TaskCard from './TaskCard';
 const Hero = () => {
   return (
     <section className="w-full px-12 py-12">
-      <div className="bg-heidi-surface rounded-3xl px-20 py-16">
-        <div className="flex items-center gap-20">
+      <div className="bg-heidi-background rounded-3xl px-16 py-2">
+        <div className="grid grid-cols-2 gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="flex flex-col gap-4 w-[560px]">
+          <div className="flex flex-col gap-4">
             {/* Section Title */}
             <div className="text-base font-semibold text-heidi-text">
               Tasks
@@ -19,7 +19,7 @@ const Hero = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-base leading-[1.4em] tracking-[-0.03em] text-heidi-text w-[517px]">
+            <p className="text-base leading-[1.4em] tracking-[-0.03em] text-heidi-text">
               Heidi automatically turns follow-ups into tasks, so you can focus
               on patients — not on scribbled stickies.
             </p>
@@ -48,9 +48,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Illustration Placeholder */}
-          <div className="flex-1 flex items-center justify-center">
-          <TaskCard />
+          {/* Right Column - Animated Illustration */}
+          <div className="flex items-center justify-center">
+            <TaskCard />
           </div>
         </div>
       </div>
@@ -59,4 +59,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

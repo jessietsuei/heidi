@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 const TaskRowAnimated = ({ isCompleted = false, style }) => {
   return (
     <motion.svg 
-      width="377" 
-      height="60" 
+      width="90%" 
+      height="auto" 
       viewBox="0 0 377 60" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
