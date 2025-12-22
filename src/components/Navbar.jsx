@@ -5,14 +5,14 @@ import FlagAU from '../assets/flag-au.svg';
 const Navbar = () => {
   return (
     <nav className="w-full bg-white/80 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-[100px] py-0 gap-[193px]">
+      <div className="flex items-center justify-between px-8 lg:px-12 xl:px-[100px] py-0">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img src={Logo} alt="Heidi" className="h-[30px] w-auto" />
         </div>
 
         {/* Navigation Links */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 lg:gap-3">
           <NavLink text="Product" hasDropdown />
           <NavLink text="Specialties" hasDropdown />
           <NavLink text="Pricing" />
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 lg:gap-3">
           {/* Country Selector */}
           <div className="flex items-center gap-1 px-2 py-5">
             <img src={FlagAU} alt="AU" className="w-[22px] h-[16px] rounded-sm" />
@@ -50,7 +50,7 @@ const Navbar = () => {
 const NavLink = ({ text, hasDropdown = false }) => {
   return (
     <div className="flex items-center gap-2 px-2 py-5">
-      <span className="text-sm font-medium text-heidi-text">{text}</span>
+      <span className="text-sm font-medium text-heidi-text whitespace-nowrap">{text}</span>
       {hasDropdown && <ChevronDown />}
     </div>
   );
