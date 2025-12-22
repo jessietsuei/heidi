@@ -61,7 +61,13 @@ const Hero = () => {
             </motion.p>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            <motion.div 
+              className="pt-4"
+              variants={textReveal}
+              initial="hidden"
+              animate="visible"
+              custom={0.45}
+            >
               <button className="font-system flex items-center gap-2 px-5 py-[10px] rounded-lg bg-heidi-accent text-heidi-surface text-base font-medium hover:bg-[#2B6433] transition-colors">
                 <span>Try it now</span>
                 <svg
@@ -81,7 +87,7 @@ const Hero = () => {
                   />
                 </svg>
               </button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Animated Illustration */}
