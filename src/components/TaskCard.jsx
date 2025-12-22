@@ -22,17 +22,17 @@ const TaskCard = () => {
     }, []);
 
     const phaseTiming = [
-      200,   // 0 → 1: Row 1 appears
-      200,   // 1 → 2: Row 2 appears
-      200,   // 2 → 3: Row 3 appears
-      400,   // 3 → 4: Pause, then rearrange
-      350,   // 4 → 5: Complete first
-      400,   // 5 → 6: Move down + fade
-      350,   // 6 → 7: Complete second
-      400,   // 7 → 8: Move down + fade
-      350,   // 8 → 9: Complete third
-      400,   // 9 → 10: Move down + fade
-      400,   // 10 → 0: Pause, then loop
+      250,   // 0 → 1: Row 1 appears
+      250,   // 1 → 2: Row 2 appears
+      250,   // 2 → 3: Row 3 appears
+      600,   // 3 → 4: Pause, then rearrange ← Let it settle
+      400,   // 4 → 5: Complete first
+      450,   // 5 → 6: Move down + fade
+      400,   // 6 → 7: Complete second
+      450,   // 7 → 8: Move down + fade
+      400,   // 8 → 9: Complete third
+      450,   // 9 → 10: Move down + fade
+      700,   // 10 → 0: Pause, then loop ← Moment of rest before restart
     ];
 
  // Phase progression
