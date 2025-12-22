@@ -21,19 +21,19 @@ const TaskCard = () => {
       return () => clearTimeout(startDelay);
     }, []);
 
-  const phaseTiming = [
-    250,   // 0 → 1: Row 1 appears
-    250,   // 1 → 2: Row 2 appears
-    250,   // 2 → 3: Row 3 appears
-    500,   // 3 → 4: Pause, then rearrange
-    400,   // 4 → 5: Complete first
-    500,   // 5 → 6: Move down + fade
-    500,   // 6 → 7: Complete second
-    400,   // 7 → 8: Move down + fade
-    500,   // 8 → 9: Complete third
-    500,   // 9 → 10: Move down + fade
-    800,   // 10 → 0: Pause, then loop
-  ];
+    const phaseTiming = [
+      200,   // 0 → 1: Row 1 appears
+      200,   // 1 → 2: Row 2 appears
+      200,   // 2 → 3: Row 3 appears
+      400,   // 3 → 4: Pause, then rearrange
+      350,   // 4 → 5: Complete first
+      400,   // 5 → 6: Move down + fade
+      350,   // 6 → 7: Complete second
+      400,   // 7 → 8: Move down + fade
+      350,   // 8 → 9: Complete third
+      400,   // 9 → 10: Move down + fade
+      400,   // 10 → 0: Pause, then loop
+    ];
 
  // Phase progression
  useEffect(() => {
@@ -201,13 +201,11 @@ const TaskCard = () => {
   <motion.img 
     src={TaskRowCompleted} 
     alt=""
-    initial={{ opacity: 0, scale: 0.9 }}
+    initial={{ opacity: 0, scale: 0.96 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ 
-      type: "spring",
-      stiffness: 400,
-      damping: 15,
-      duration: 0.3
+      duration: 0.35,
+      ease: [0.25, 0.46, 0.45, 0.94], 
     }}
     style={{ width: '100%' }}
   />

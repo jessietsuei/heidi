@@ -21,9 +21,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full px-12 py-12">
-      <div className="bg-heidi-background rounded-3xl px-16 py-2">
-        <div className="grid grid-cols-2 gap-16 items-center">
+    <section className="w-full px-6 md:px-12 py-8 md:py-12">
+      <div className="bg-heidi-background rounded-3xl px-8 md:px-16 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="flex flex-col gap-4">
             {/* Section Title / Tag */}
@@ -41,7 +41,7 @@ const Hero = () => {
             <motion.img 
               src={H1} 
               alt="Tasks that put care first" 
-              className="w-[90%] h-auto"
+              className="w-full md:w-[90%] h-auto"
               variants={textReveal}
               initial="hidden"
               animate="visible"
