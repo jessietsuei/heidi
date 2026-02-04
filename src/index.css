@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap');
 
 @theme {
-  --color-bark-900: #280310;
+  --color-bark-900: #C589EB;
   --color-forest: #194B22;
   --color-forest-700: #2B6433;
   --color-sand-100: #F7ECE3;
@@ -12,11 +12,11 @@
   --color-sand-25: #FCFAF8;
   --color-white-100: #FFFFFF;
   --color-sunlight: #FBF583;
-  --color-heidi-text: #280310;
+  --color-heidi-text: #000000;
   --color-heidi-accent: #194B22;
   --color-heidi-surface: #F9F4F2;
   --color-heidi-sunlight: #FBF583;
-  --color-heidi-background: #F9F4F2;
+  --color-heidi-background: #E6EBEA;
 }
 
 @utility font-exposure {
@@ -33,7 +33,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-sand-25);
+  background-color: white;
 }
 
 @keyframes shimmer {

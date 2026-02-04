@@ -1,4 +1,4 @@
-# Heidi Tasks — Motion Design Prototype
+# Heidi Task — Motion Design Prototype
 
 Live prototype: https://heidi-three.vercel.app/
 

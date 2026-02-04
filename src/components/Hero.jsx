@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <section className="w-full px-6 lg:px-12 py-8 lg:py-12">
-      <div className="bg-heidi-background rounded-3xl px-8 lg:px-16 py-8 lg:py-2">
+      <div className="bg-[#CEDAD8] rounded-3xl px-8 lg:px-16 py-8 lg:py-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="flex flex-col gap-4">
@@ -56,8 +56,7 @@ const Hero = () => {
               animate="visible"
               custom={0.3}
             >
-              Heidi automatically turns follow-ups into tasks, so you can focus
-              on patients — not on scribbled stickies.
+              Smart tech turns follow-ups into tasks — so you can focus on people, not paperwork.
             </motion.p>
 
             {/* CTA Button */}
@@ -68,7 +67,7 @@ const Hero = () => {
               animate="visible"
               custom={0.45}
             >
-              <button className="font-system flex items-center gap-2 px-5 py-[10px] rounded-lg bg-heidi-accent text-heidi-surface text-base font-medium hover:bg-[#2B6433] transition-colors">
+              <button className="font-system flex items-center gap-2 px-5 py-[10px] rounded-lg bg-black text-white text-base font-medium hover:bg-gray-800 transition-colors">
                 <span>Try it now</span>
                 <svg
                   width="24"
@@ -76,7 +75,7 @@ const Hero = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="text-heidi-surface"
+                  className="text-white"
                 >
                   <path
                     d="M5 12H19M19 12L12 5M19 12L12 19"

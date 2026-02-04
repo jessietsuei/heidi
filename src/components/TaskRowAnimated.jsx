@@ -55,9 +55,9 @@ const TaskRowAnimated = ({ style, id = 1 }) => {
             delay: id * 0.2,
           }}
         >
-          <stop offset="0" stopColor="#280310" stopOpacity="0.4" />
-          <stop offset="0.5" stopColor="#280310" stopOpacity="1" />
-          <stop offset="1" stopColor="#280310" stopOpacity="0.4" />
+          <stop offset="0" stopColor="#CEDAD8" stopOpacity="0.4" />
+          <stop offset="0.5" stopColor="#CEDAD8" stopOpacity="1" />
+          <stop offset="1" stopColor="#CEDAD8" stopOpacity="0.4" />
         </motion.linearGradient>
 
         {/* Static base gradient */}
@@ -69,9 +69,9 @@ const TaskRowAnimated = ({ style, id = 1 }) => {
           y2="0"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#280310" stopOpacity="0.4" />
-          <stop offset="0.6" stopColor="#280310" stopOpacity="0.15" />
-          <stop offset="1" stopColor="#280310" stopOpacity="0" />
+          <stop offset="0" stopColor="#CEDAD8" stopOpacity="0.4" />
+          <stop offset="0.6" stopColor="#CEDAD8" stopOpacity="0.15" />
+          <stop offset="1" stopColor="#CEDAD8" stopOpacity="0" />
         </linearGradient>
       </defs>
 
@@ -83,7 +83,7 @@ const TaskRowAnimated = ({ style, id = 1 }) => {
         />
 
         {/* Checkbox */}
-        <circle cx="28" cy="26" r="7.5" stroke="#280310" fill="none" />
+        <circle cx="28" cy="26" r="7.5" stroke="#CEDAD8" fill="white" />
 
         {/* Line 1 */}
         <rect x="44" y="16" width="313" height="8" rx="4" fill={`url(#${baseGradientId})`} />

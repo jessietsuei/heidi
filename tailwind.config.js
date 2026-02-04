@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'heidi': {
-          'text': '#280310',
+          'text': '#000000',
           'accent': '#194B22',
           'accent-hover': '#2B6433',
           'surface': '#F7ECE3',

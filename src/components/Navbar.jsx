@@ -1,14 +1,14 @@
 import React from 'react';
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/scaffold.svg';
 import FlagAU from '../assets/flag-au.svg';
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white/80 backdrop-blur-sm">
+    <nav className="w-full bg-[#D9D9D9] backdrop-blur-sm">
       <div className="flex items-center justify-between px-8 lg:px-12 xl:px-[100px] py-0">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={Logo} alt="Heidi" className="h-[30px] w-auto" />
+          <img src={Logo} alt="Heidi" className="h-[22.5px] w-auto" />
         </div>
 
         {/* Navigation Links */}
@@ -34,10 +34,10 @@ const Navbar = () => {
 
           {/* Buttons */}
           <div className="flex items-center gap-2">
-            <button className="px-4 py-2 rounded-xl bg-heidi-surface text-heidi-text text-sm font-medium hover:bg-heidi-surface/80 transition-colors">
+            <button className="px-4 py-2 rounded-xl bg-white text-heidi-text text-sm font-medium hover:bg-gray-100 transition-colors">
               Log in
             </button>
-            <button className="px-4 py-2 rounded-xl bg-heidi-sunlight text-heidi-text text-sm font-medium hover:bg-heidi-highlight/90 transition-colors">
+            <button className="px-4 py-2 rounded-xl bg-[#348DAF] text-white text-sm font-medium hover:bg-[#2a7a99] transition-colors">
               Sign Up
             </button>
           </div>

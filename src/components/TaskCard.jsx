@@ -111,6 +111,7 @@ const TaskCard = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', aspectRatio: '1' }}>
+      
       {/* Background */}
       <img
         src={BackgroundContainer}
